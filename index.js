@@ -1,3 +1,3 @@
 const server = require('./server');
-server.start({port: 80});
+server.start({port: 443, domain: "chii.vercel.app"});
 
