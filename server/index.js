@@ -56,5 +56,6 @@ async function start({
 }
 
 module.exports = {
-  start
+  start,
+  app
 };
