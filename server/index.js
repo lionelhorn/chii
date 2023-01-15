@@ -8,6 +8,8 @@ const fs = require('licia/fs');
 const endWith = require('licia/endWith');
 const WebSocketServer = require('./lib/WebSocketServer');
 
+const app = new Koa();
+
 async function start({
   port = 8080,
   host,
@@ -24,7 +26,6 @@ async function start({
     basePath += '/';
   }
 
-  const app = new Koa();
   const wss = new WebSocketServer();
 
   app.use(compress()).use(router(wss.channelManager, domain, cdn, basePath));
@@ -55,5 +56,5 @@ async function start({
 }
 
 module.exports = {
-  start,
+  start
 };
